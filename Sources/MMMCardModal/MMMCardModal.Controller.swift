@@ -871,7 +871,7 @@ extension MMMCardModal {
 			}
 			
 			let delta = view.currentYPosition / view.containerView.frame.height
-			var velocity = abs(recognizer.velocity(in: view.containerView).y)
+			var velocity = recognizer.velocity(in: view.containerView).y
 			
 			// ScrollViews have the tendency to give really high velocities. Divide by a constant.
 			if fromScrollView {
@@ -881,7 +881,7 @@ extension MMMCardModal {
 			// Check for isEnabled explicitly because we only want ending to a nearest stick
 			// position when false.
 			
-			if isEnabled, velocity >= options.dragVelocity {
+			if isEnabled, abs(velocity) >= options.dragVelocity {
 				// Got a high velocity drag, let's determine the direction and get the
 				// next stick position.
 				if let (position, _) = parent.nextStickOption(delta: delta, isDraggingDown: isDraggingDown) {
