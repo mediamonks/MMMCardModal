@@ -10,7 +10,7 @@ let package = Package(
         .library(
             name: "MMMCardModal",
             targets: ["MMMCardModal"]
-		)
+	)
     ],
     dependencies: [],
     targets: [
@@ -18,11 +18,6 @@ let package = Package(
             name: "MMMCardModal",
             dependencies: [],
             path: "Sources"
-		),
-        .testTarget(
-            name: "MMMCardModalTests",
-            dependencies: ["MMMCardModal"],
-            path: "Tests"
-		)
+	)
     ]
 )
