@@ -28,12 +28,19 @@ present(MyVC(), animated: true)
 
 Podfile:
 
-```
+```ruby
 source 'https://github.com/mediamonks/MMMSpecs.git'
 source 'https://cdn.cocoapods.org/'
 ...
 pod 'MMMCardModal'
 ```
+
+SPM:
+
+```swift
+.package(url: "https://github.com/mediamonks/MMMCardModal", .upToNextMajor(from: "0.2.13"))
+```
+
 
 ## More detailed example
 
