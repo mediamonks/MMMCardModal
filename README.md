@@ -76,3 +76,9 @@ checkout `CardModal.Options.swift`.
  on the `currentPosition`. The `currentPosition` is the `StickPosition` that is active.
  - Set custom options by modifying `self.options` after initializing. If you want to edit the options
  after the init call, you should override it with a new `CardModal.Options` object.
+
+## Ready for liftoff? 🚀
+
+We're always looking for talent. Join one of the fastest-growing rocket ships in
+the business. Head over to our [careers page](https://media.monks.com/careers)
+for more info!
