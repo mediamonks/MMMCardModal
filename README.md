@@ -1,6 +1,8 @@
 # MMMCardModal
 
-An iOS 13 insipred modal card presentation, however you can specify multiple stick postions for the presented VC.
+[![Build](https://github.com/mediamonks/MMMAsyncLoadable/workflows/Build/badge.svg)](https://github.com/mediamonks/MMMAsyncLoadable/actions?query=workflow%3ABuild)
+
+An iOS 13 inspired modal card presentation, however you can specify multiple stick positions for the presented VC.
 
 (This is a part of `MMMTemple` suite of iOS libraries we use at [MediaMonks](https://www.mediamonks.com/).)
 

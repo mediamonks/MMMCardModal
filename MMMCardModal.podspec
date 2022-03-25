@@ -6,7 +6,7 @@
 Pod::Spec.new do |s|
 
 	s.name = "MMMCardModal"
-	s.version = "0.2.12"
+	s.version = "0.2.13"
 	s.summary = "An iOS 13 insipred modal card presentation, however you can specify multiple stick postions for the presented VC"
 	s.description =  s.summary
 	s.homepage = "https://github.com/mediamonks/#{s.name}"
