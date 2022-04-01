@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>NavigationHost Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../../js/jquery.min.js" defer></script>
+    <script src="../../js/jazzy.js" defer></script>
+    
+    <script src="../../js/lunr.min.js" defer></script>
+    <script src="../../js/typeahead.jquery.js" defer></script>
+    <script src="../../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/NavigationHost" class="dashAnchor"></a>
+    <a title="NavigationHost Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../../index.html">MMMCardModal 0.2.13 Docs</a> (0% documented)</p>
+        <div class="header-right">
+          <form role="search" action="../../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../../index.html">MMMCardModal Reference</a>
+        <img id="carat" src="../../img/carat.png" alt=""/>
+        NavigationHost Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Enums/MMMCardModal.html">MMMCardModal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/MMMCardModal/StickPosition.html">– StickPosition</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/MMMCardModal/_ViewController.html">– _ViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/MMMCardModal/Options.html">– Options</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/MMMCardModal/NavigationHost.html">– NavigationHost</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Protocols/CardModal_ChildControllerDelegate.html">CardModal_ChildControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Protocols/CardModal_NavigationController.html">CardModal_NavigationController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Protocols/CardModal_PresentationProtocol.html">CardModal_PresentationProtocol</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>NavigationHost</h1>
+            <p>Present a set of ViewControllers in a MMMCardModal.</p>
+
+<p>You can conform the controllers in your <code><a href="../../Enums/MMMCardModal.html#/NavigationController">NavigationController</a></code> to <code><a href="../../Enums/MMMCardModal.html#/ChildControllerDelegate">ChildControllerDelegate</a></code>
+to get access to the <code>NavigationHost</code> and the delegate callbacks to detect closing &amp; position
+changes.</p>
+
+<p>Make sure to have the reference to the parent <code>navigationHost</code> defined as <code>weak</code> to avoid
+cyclic references.</p>
+
+<p><strong>Required:</strong></p>
+
+<ul>
+<li>You should implement <code>cardModalWillDragToClose</code> to close the presented
+<code>NavigationHost</code> and usually do some cleaning up. You can  dismiss the presented
+<code>NavigationHost</code> with animation so the StatusBar animates with it. Get a reference
+to the host by conforming to the <code><a href="../../Enums/MMMCardModal.html#/ChildControllerDelegate">ChildControllerDelegate</a></code> protocol.</li>
+</ul>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/init(controller:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">init(controller:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/supportedInterfaceOrientations" class="dashAnchor"></a>
+                    <a class="token" href="#/">supportedInterfaceOrientations</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Child%20delegates%20proxy"></a>
+                <a name="//apple_ref/swift/Section/Child delegates proxy" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Child%20delegates%20proxy"></a>
+                  <h3 class="section-name"><span>Child delegates proxy</span>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/cardModalWillDrag(_:to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">cardModalWillDrag(_:<wbr>to:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/cardModalDidDrag(_:to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">cardModalDidDrag(_:<wbr>to:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/cardModalIsDragging(_:to:progress:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">cardModalIsDragging(_:<wbr>to:<wbr>progress:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/cardModalWillDragToClose(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">cardModalWillDragToClose(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/cardModalDidDragToClose(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">cardModalDidDragToClose(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/cardModalDidTapOutside(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/">cardModalDidTapOutside(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2022 <a class="link" href="https://github.com/mediamonks/MMMCardModal" target="_blank" rel="external noopener">MediaMonks</a>. All rights reserved. (Last updated: 2022-04-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

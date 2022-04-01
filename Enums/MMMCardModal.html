@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MMMCardModal Enumeration Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Enum/MMMCardModal" class="dashAnchor"></a>
+    <a title="MMMCardModal Enumeration Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">MMMCardModal 0.2.13 Docs</a> (0% documented)</p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">MMMCardModal Reference</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        MMMCardModal Enumeration Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/MMMCardModal.html">MMMCardModal</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MMMCardModal/StickPosition.html">– StickPosition</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MMMCardModal/_ViewController.html">– _ViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MMMCardModal/Options.html">– Options</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MMMCardModal/NavigationHost.html">– NavigationHost</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/CardModal_ChildControllerDelegate.html">CardModal_ChildControllerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/CardModal_NavigationController.html">CardModal_NavigationController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/CardModal_PresentationProtocol.html">CardModal_PresentationProtocol</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>MMMCardModal</h1>
+            <p>iOS 13 like card modals that support multiple positions on screen, just like Apple Maps.</p>
+
+<p>Subclass the <code><a href="../Enums/MMMCardModal.html#/ViewController">MMMCardModal.ViewController</a></code> for a single modal,
+or <code><a href="../Enums/MMMCardModal/NavigationHost.html">MMMCardModal.NavigationHost</a></code> to support navigation controllers. You can conform the
+controllers in your <code>NavigationController</code> to <code>ChildControllerDelegate</code> to get access
+to the <code>NavigationHost</code> and the delegate callbacks to detect closing &amp; position changes.</p>
+
+<p>Make sure to have the reference to the parent <code>navigationHost</code> defined as <code>weak</code> to avoid
+cyclic references.</p>
+
+<p>It&rsquo;s possible to specify multiple <code>StickPosition</code>s, this defaults to <code>.top</code>, but can be <code>.center</code>
+or a custom value. The first value in the <code>stickPositions</code> array is the position the modal will open
+to when presenting.  E.g. <code>.percentage(0.2)</code> will open the modal 20% from the top of the screen.</p>
+
+<p>More options are available and can be set after <code>super.init()</code>, for more info
+checkout <code>MMMCardModal.Options.swift</code>.</p>
+
+<p><strong>Required:</strong></p>
+
+<ul>
+<li>If you implement <code>cardModalWillDragToClose</code> you will have to to close the presented controller
+yourself (and usually do some cleaning up). You can dismiss the presented controller with animation,
+because then the StatusBar will animate along nicely. If you use the <code>NavigationHost</code> you should close
+that instead of the controller, since that is presented. Get a reference to this by conforming to the
+protocol <code>ChildControllerDelegate</code>.</li>
+<li>You should always supply at least one <code>StickPosition</code> in the  <code>stickPositions</code> array.</li>
+</ul>
+
+<p><strong>Optional:</strong></p>
+
+<ul>
+<li>The <code>cardModalDidDrag(_ to: )</code> callback is optional, but can be useful to alter the UI based
+on the <code>currentPosition</code>. The <code>currentPosition</code> is the <code>StickPosition</code> that is active.</li>
+<li>Set custom options by modifying <code>self.options</code> after initializing. If you want to edit the options
+after the init call, you should override it with a new <code><a href="../Enums/MMMCardModal/Options.html">MMMCardModal.Options</a></code> object.</li>
+</ul>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Alias/ViewController" class="dashAnchor"></a>
+                    <a class="token" href="#/">ViewController</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Subclass the <code>ViewController</code> for a single modal, if you need navigation, look
+at the <code><a href="../Enums/MMMCardModal/NavigationHost.html">NavigationHost</a></code>.</p>
+
+<p>Have a look at the <code>CardModal</code> comments for more info on integration.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Enum/StickPosition" class="dashAnchor"></a>
+                    <a class="token" href="#/">StickPosition</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="../Enums/MMMCardModal/StickPosition.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Class/_ViewController" class="dashAnchor"></a>
+                    <a class="token" href="#/">_ViewController</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Don&rsquo;t use this class directly, use the MMMCardModal.ViewController instead.</p>
+
+                        <a href="../Enums/MMMCardModal/_ViewController.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Class/Options" class="dashAnchor"></a>
+                    <a class="token" href="#/">Options</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Options for presenting the MMMCardModal.</p>
+
+<p>Set custom options by modifying <code>self.options</code> after initializing. If you want to edit the options
+after the init call, you should override it with a new <code>MMMCardModal.Options</code> object.</p>
+
+                        <a href="../Enums/MMMCardModal/Options.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Alias/ChildControllerDelegate" class="dashAnchor"></a>
+                    <a class="token" href="#/">ChildControllerDelegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Conform the ViewControllers in your NavigationController to this delegate to get a reference to
+the <code><a href="../Enums/MMMCardModal/NavigationHost.html">NavigationHost</a></code> and the delegate callbacks.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Alias/NavigationController" class="dashAnchor"></a>
+                    <a class="token" href="#/">NavigationController</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If you have a custom NavigationController, you can conform to this protocol.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Class/NavigationHost" class="dashAnchor"></a>
+                    <a class="token" href="#/">NavigationHost</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Present a set of ViewControllers in a MMMCardModal.</p>
+
+<p>You can conform the controllers in your <code><a href="../Enums/MMMCardModal.html#/NavigationController">NavigationController</a></code> to <code><a href="../Enums/MMMCardModal.html#/ChildControllerDelegate">ChildControllerDelegate</a></code>
+to get access to the <code>NavigationHost</code> and the delegate callbacks to detect closing &amp; position
+changes.</p>
+
+<p>Make sure to have the reference to the parent <code>navigationHost</code> defined as <code>weak</code> to avoid
+cyclic references.</p>
+
+<p><strong>Required:</strong></p>
+
+<ul>
+<li>You should implement <code>cardModalWillDragToClose</code> to close the presented
+<code>NavigationHost</code> and usually do some cleaning up. You can  dismiss the presented
+<code>NavigationHost</code> with animation so the StatusBar animates with it. Get a reference
+to the host by conforming to the <code><a href="../Enums/MMMCardModal.html#/ChildControllerDelegate">ChildControllerDelegate</a></code> protocol.</li>
+</ul>
+
+                        <a href="../Enums/MMMCardModal/NavigationHost.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2022 <a class="link" href="https://github.com/mediamonks/MMMCardModal" target="_blank" rel="external noopener">MediaMonks</a>. All rights reserved. (Last updated: 2022-04-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>
