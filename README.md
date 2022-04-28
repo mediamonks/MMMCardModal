@@ -8,7 +8,7 @@ An iOS 13 inspired modal card presentation, however you can specify multiple sti
 
 ## Demo
 
-![Preview](Preview.gif)
+![Preview](https://github.com/mediamonks/MMMCardModal/raw/master/Preview.gif)
 
 ## Most basic example
 
